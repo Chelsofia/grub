@@ -10,7 +10,6 @@ function App() {
   const {
     data: user,
     isLoading,
-    isError,
   } = useCurrentUser();
 
   if (isLoading) {
