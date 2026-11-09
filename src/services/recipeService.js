@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost:5001/api/recipes";
+const API_URL = "https://grub-backend.vercel.app/api/recipes";
 
 export const getRecipes = async ({ search = "", letter = "", signal } = {}) => {
   const params = new URLSearchParams();

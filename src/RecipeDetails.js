@@ -6,7 +6,7 @@ import Header from "./components/Header";
 
 const fetchRecipe = async (id) => {
   const response = await fetch(
-    `http://localhost:5001/api/recipes/${id}`
+    `https://grub-backend.vercel.app/api/recipes/${id}`
   );
 
   if (!response.ok) {

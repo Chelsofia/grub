@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost:5001/api/auth";
+const API_URL = "https://grub-backend.vercel.app/auth";
 
 export const loginUser = async (credentials) => {
   const response = await fetch(`${API_URL}/login`, {
