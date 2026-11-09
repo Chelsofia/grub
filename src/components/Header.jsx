@@ -13,8 +13,8 @@ export default function Header () {
                         </a>
                     </li>
                     <li>
-                        <a href="/about" className=" hover:text-[#263A28] hover:font-bold">
-                            About
+                        <a href="/about-us" className=" hover:text-[#263A28] hover:font-bold">
+                            About Us
                         </a>
                     </li>
                     <li>
