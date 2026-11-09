@@ -8,7 +8,7 @@ Grub allows users to search for recipes, discover different meals, and explore c
 
 <p align="center">
   <img
-    src="../assets/images/grub-homepage.png"
+    src="./src/assets/images/grub-homepage.png"
     alt="Grub homepage"
     width="100%"
   />
