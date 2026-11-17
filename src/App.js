@@ -5,6 +5,7 @@ import Home from "./Home";
 import RecipeDetails from "./RecipeDetails";
 import Login from "./components/Login";
 import useCurrentUser from "./hooks/useCurrentUser";
+import Favorites from "./pages/Favorites";
 
 function App() {
   const {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<Home user={user} />} />
         <Route path="/recipe/:id" element={<RecipeDetails />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </BrowserRouter>
   );

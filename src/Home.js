@@ -6,6 +6,7 @@ import CallToAction from "./components/CallToAction";
 import Pagination from "./components/Pagination";
 import SearchBar from "./components/SearchBar";
 import { getRecipes } from "./services/recipeService";
+import FavoriteButton from "./components/FavoriteButton";
 
 function Home({ user }) {
   const [recipes, setRecipes] = useState([]);
@@ -158,32 +159,42 @@ function Home({ user }) {
             <>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {currentRecipes.map((recipe) => (
-                  <Link
-                    to={`/recipe/${recipe._id}`}
-                    key={recipe._id}
-                    className="bg-white rounded-lg overflow-hidden shadow-md"
-                  >
-                    <img
-                      src={recipe.image}
-                      alt={recipe.name}
-                      className="w-full h-48 object-cover"
-                    />
+  <div
+    key={recipe._id}
+    className="relative bg-white rounded-lg overflow-hidden shadow-md"
+  >
+    {/* Favorite button */}
+    <div className="absolute top-3 right-3 z-10">
+      <FavoriteButton recipeId={recipe._id} />
+    </div>
 
-                    <div className="p-4">
-                      <h3 className="font-bold text-lg text-[#354B35]">
-                        {recipe.name}
-                      </h3>
+    {/* Recipe card link */}
+    <Link
+      to={`/recipe/${recipe._id}`}
+      className="block"
+    >
+      <img
+        src={recipe.image}
+        alt={recipe.name}
+        className="w-full h-48 object-cover"
+      />
 
-                      <p className="text-xs font-medium text-[#C8754D] mt-1">
-                        {recipe.area || "Origin unknown"}
-                      </p>
+      <div className="p-4">
+        <h3 className="font-bold text-lg text-[#354B35]">
+          {recipe.name}
+        </h3>
 
-                      <p className="text-[#292B26] text-sm mt-2">
-                        {recipe.category}
-                      </p>
-                    </div>
-                  </Link>
-                ))}
+        <p className="text-xs font-medium text-[#C8754D] mt-1">
+          {recipe.area || "Origin unknown"}
+        </p>
+
+        <p className="text-[#292B26] text-sm mt-2">
+          {recipe.category}
+        </p>
+      </div>
+    </Link>
+  </div>
+))}
               </div>
 
               <Pagination

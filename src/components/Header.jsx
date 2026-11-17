@@ -143,7 +143,13 @@ export default function Header() {
                       {user.email}
                     </p>
                   </div>
-
+                                          <Link
+  to="/favorites"
+  onClick={() => setIsOpen(false)}
+  className="block px-4 py-2 text-sm text-[var(--color-text)] hover:bg-[#A8B89A]/20"
+>
+  My Favorites
+</Link>
                   <button
                     type="button"
                     onClick={handleLogout}
@@ -151,6 +157,7 @@ export default function Header() {
                   >
                     Log out
                   </button>
+                  
                 </>
               ) : (
                 <Link
